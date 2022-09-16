@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header id="header">
         <a href="#" class="logo">LOGO</a>
         <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Service</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="active" onclick="toggle()">Home</a></li>
+            <li><a href="#about" onclick="toggle()">About</a></li>
+            <li><a href="#services" onclick="toggle()">Service</a></li>
+            <li><a href="#portfolio" onclick="toggle()">Portfolio</a></li>
+            <li><a href="#team" onclick="toggle()">Team</a></li>
+            <li><a href="#contact" onclick="toggle()">Contact</a></li>
         </ul>
-        <div class="toggle"></div>
+        <div class="toggle" onclick="toggle()"></div>
     </header>
 
     <section id="home">
@@ -64,5 +65,43 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quod, aspernatur, rerum, impedit veritatis rem illum saepe consectetur quaerat sit distinctio sequi quam facilis quos! Modi, a odio. Beatae, optio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo laborum natus omnis, aut quasi hic ad. Corrupti eius, pariatur beatae nisi numquam laboriosam debitis quibusdam, rerum excepturi itaque nostrum in.</p>
         </div>
     </section>
+    <script type="text/javascript">
+        function toggle(){
+            var header = document.getElementById("header")
+            header.classList.toggle('active')
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"><i  class="fab fa-instagram"></i> </a>
+            <a href="#"><i  class="fab fa-snapchat"></i> </a>
+            <a href="#"><i  class="fab fa-twitter"></i> </a>
+            <a href="#"><i  class="fab fa-facebook-f"></i> </a>
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Terms</a>
+            </li>
+            <li>
+                <a href="#">Privacy Policy</a>
+            </li>
+            <p class="copyright">
+                #2022
+            </p>
+            
+        </ul>
+
+    </footer>
 </body>
 </html>

@@ -16,7 +16,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(192, 218, 46);
+    background: rgba(156, 156, 118, 0.5);
     z-index: 1000;
 }
 header .logo {
@@ -84,13 +84,24 @@ section:nth-child(odd){
     position: relative;
     justify-content: center;
     align-items: center;
-    background: rgb(192, 218, 46);
+    background: rgba(170, 135, 66, 0.521);
     color: #fff;
 }
 @media (max-width: 992px){
+    section{
+        padding: 100px 50px 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    section img{
+        margin: 50px 0 0;
+        max-width: 100%;
+    }
     header ul{
         position: absolute;
-        top: 80px;
+        top: -100%;
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
@@ -98,8 +109,15 @@ section:nth-child(odd){
         text-align: center;
         overflow: auto;
         transition: 0.5s;
-        background: #111;
+        background: rgba(156, 156, 118, 0.5);
         flex-direction: column;
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    header.active ul{
+        opacity: 1;
+        top: 80px;
+        transform: translateY(0);
     }
     header ul li a{
         margin: 5px o;
@@ -133,4 +151,66 @@ section:nth-child(odd){
         z-index: 1;
         transition: 0.5s;
     }
+    header.active .toggle:before{
+        top: 14px;
+        transform: rotate(45deg);
+        box-shadow:0 0 0 #fff;
+    }
+    header.active .toggle:after{
+        bottom: 14px;
+        transform: rotate(-45deg);
+    }
+}
+
+.footer{
+    padding: 40px 0;
+    background-color:rgba(156, 156, 118, 0.5);
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: #fff;
+}
+.footer .social a{
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+.footer .social a:hover{
+    opacity: 0.9;
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer ul li a:hover{
+    opacity: 1;
+}
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
 }
